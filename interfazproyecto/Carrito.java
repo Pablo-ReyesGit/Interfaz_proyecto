@@ -332,6 +332,9 @@ public class Carrito extends javax.swing.JFrame implements Printable{
     
     
     private void Imprimir(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Imprimir
+    if (TblCombos.getRowCount() == 0) {
+    JOptionPane.showMessageDialog(null, "No Existen Datos", "Advertencia", JOptionPane.WARNING_MESSAGE);
+} else {
     try {
         PrinterJob gap = PrinterJob.getPrinterJob();
         gap.setPrintable(this);
@@ -356,6 +359,7 @@ public class Carrito extends javax.swing.JFrame implements Printable{
     this.setVisible(false); 
     
 }
+    }
     }//GEN-LAST:event_Imprimir
     
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
